@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Sacola • Israelli</title>
+  <script>
+    // Aplica o tema antes de desenhar a página (evita piscar claro→escuro).
+    try {
+      var t = localStorage.getItem('israelli:tema');
+      if (t !== 'dark' && t !== 'light') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,100..900,0..100,0..1&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+  <main class="page">
+    <div class="aviso">
+      <img src="assets/gift.svg" width="15" height="15" alt="">
+      <p>Sua primeira dose de felicidade tem R$ 5 OFF. Use OISRAELLI em pedidos a partir de R$ 30.</p>
+    </div>
+    <header class="nav" data-header></header>
+    <section class="interna">
+      <p class="migalha"><a href="index.html">Início</a> / Sacola</p>
+      <div class="interna__cab">
+        <div>
+          <p class="categoria">QUASE LÁ</p>
+          <h1 class="titulo">Sua sacola</h1>
+        </div>
+        <a class="link-seta" href="index.html#cardapio">Continuar escolhendo →</a>
+      </div>
+      <div data-sacola></div>
+    </section>
+    <footer class="rodape rodape--interno" data-footer></footer>
+  </main>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="carrinho.js"></script>
+</body>
+</html>
