@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Criar conta • Israelli</title>
+  <script>
+    // Aplica o tema antes de desenhar a página (evita piscar claro→escuro).
+    try {
+      var t = localStorage.getItem('israelli:tema');
+      if (t !== 'dark' && t !== 'light') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,100..900,0..100,0..1&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+  <main class="page">
+    <div class="aviso">
+      <img src="assets/gift.svg" width="15" height="15" alt="">
+      <p>Sua primeira dose de felicidade tem R$ 5 OFF. Use OISRAELLI em pedidos a partir de R$ 30.</p>
+    </div>
+    <header class="nav" data-header></header>
+    <section class="interna">
+      <div class="cadastro">
+        <div class="cadastro__arte">
+          <div class="cadastro__selo"><img src="assets/asterisk.svg" width="104" height="104" alt=""></div>
+          <h2>Seu próximo<br>shake começa<br><span>aqui.</span></h2>
+          <ul>
+            <li><img src="assets/check-circle-teal.svg" width="20" height="20" alt="">R$ 5 OFF na primeira compra com OISRAELLI</li>
+            <li><img src="assets/check-circle-teal.svg" width="20" height="20" alt="">Acompanhe cada pedido em tempo real</li>
+            <li><img src="assets/check-circle-teal.svg" width="20" height="20" alt="">Salve seus favoritos e peça de novo em 2 cliques</li>
+          </ul>
+        </div>
+        <div class="cadastro__form">
+          <p class="categoria">CRIAR CONTA</p>
+          <h1 class="modal__titulo">Bem-vindo à Israelli</h1>
+          <p class="modal__texto">Já tem conta? <button type="button" class="link" data-open-login>Entrar</button></p>
+          <form class="form" data-cadastro novalidate>
+            <label class="campo"><span>Nome completo</span>
+              <span class="campo__input"><img src="assets/user-brown.svg" width="16" height="16" alt=""><input name="nome" autocomplete="name" placeholder="Como podemos te chamar?" required></span>
+            </label>
+            <div class="form__grade">
+              <label class="campo"><span>E-mail</span>
+                <span class="campo__input"><img src="assets/mail-brown.svg" width="16" height="16" alt=""><input type="email" name="email" autocomplete="email" placeholder="voce@email.com" required></span>
+              </label>
+              <label class="campo"><span>Celular</span>
+                <span class="campo__input"><img src="assets/phone-brown.svg" width="16" height="16" alt=""><input type="tel" name="telefone" autocomplete="tel" placeholder="(00) 00000-0000" data-mask-tel required></span>
+              </label>
+            </div>
+            <div class="form__grade">
+              <label class="campo"><span>Senha</span>
+                <span class="campo__input"><img src="assets/lock-brown.svg" width="16" height="16" alt=""><input type="password" name="senha" autocomplete="new-password" placeholder="Mínimo 6 caracteres" required></span>
+                <span class="senha-forca"><span data-forca></span></span>
+              </label>
+              <label class="campo"><span>Confirmar senha</span>
+                <span class="campo__input"><img src="assets/lock-brown.svg" width="16" height="16" alt=""><input type="password" name="confirmar" autocomplete="new-password" placeholder="Repita a senha" required></span>
+              </label>
+            </div>
+            <p class="bloco__rotulo" style="margin:8px 0 -4px">ENDEREÇO DE ENTREGA</p>
+            <div class="form__grade form__grade--3">
+              <label class="campo"><span>Rua</span><span class="campo__input"><input name="rua" autocomplete="address-line1" placeholder="Rua, avenida…" required></span></label>
+              <label class="campo"><span>Número</span><span class="campo__input"><input name="numero" placeholder="123" required></span></label>
+              <label class="campo"><span>Complemento</span><span class="campo__input"><input name="complemento" placeholder="Apto, bloco"></span></label>
+            </div>
+            <div class="form__grade">
+              <label class="campo"><span>Bairro</span><span class="campo__input"><input name="bairro" placeholder="Seu bairro" required></span></label>
+              <label class="campo"><span>Cidade</span><span class="campo__input"><input name="cidade" value="Tel Aviv" required></span></label>
+            </div>
+            <label class="check"><input type="checkbox" name="termos" required> <span>Li e aceito os Termos de uso e a Política de privacidade.</span></label>
+            <p class="form__erro" data-erro hidden></p>
+            <button class="btn btn--primario btn--largo" type="submit">Criar minha conta <img src="assets/arrow-right.svg" width="18" height="18" alt=""></button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="rodape rodape--interno" data-footer></footer>
+  </main>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="cadastro.js"></script>
+</body>
+</html>
